@@ -10,19 +10,35 @@ $cBlack: black;
   color: $cBlack;
   border: 1px solid $cBlack;
   padding: 10px 40px;
+  margin: 50px 0;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 100px;
   transition: all 1s;
 
-  &.float {
+  &.slide-bg {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    & span {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $cBlack;
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+      z-index: -1;
+    }
+
     &:hover {
-      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+      color: $cWhite;
+
+      & span {
+        transform: none;
+      }
     }
   }
-
-  // &:hover {
-  //   background-color: c$cBlack;
-  //   color: $cWhite;
-  // }
 }

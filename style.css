@@ -7,15 +7,42 @@
   color: black;
   border: 1px solid black;
   padding: 10px 40px;
+  margin: 50px 0;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 100px;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
-.btn.float:hover {
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+.btn.slide-bg {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn.slide-bg span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  z-index: -1;
+}
+
+.btn.slide-bg:hover {
+  color: #fff;
+}
+
+.btn.slide-bg:hover span {
+  -webkit-transform: none;
+          transform: none;
 }
 /*# sourceMappingURL=style.css.map */
