@@ -1,10 +1,12 @@
+@import "mixin";
+
 $cWhite: #fff;
 $cBlack: black;
 
 .parent {
   background-color: rgb(123, 216, 233);
   width: 100%;
-  height: 600px;
+  height: 300px;
 }
 
 .child {
@@ -26,4 +28,43 @@ $cBlack: black;
 }
 .child {
   display: inline-block;
+}
+
+
+//--------------------------//
+// spin
+// -------------------------// 
+
+.try {
+  transform-style: preserve-3d;
+  // perspective: 500px;
+  perspective-origin: center center;
+  
+  & .spinner {
+    background-color: black;
+    margin: 90px auto;
+    width: 40px;
+    height: 40px;
+    
+    @include animation02(
+      $name: spinner,
+      $duration: 1.2s,
+      $iteration-count: infinite,
+      ); 
+
+    }
+  }
+
+
+@keyframes spinner {
+  0% {
+    transform: perspective(120px) rotate(0);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0);
+  }
+
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
 }
