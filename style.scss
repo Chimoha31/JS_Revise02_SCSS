@@ -55,7 +55,6 @@ $cBlack: black;
     }
   }
 
-
 @keyframes spinner {
   0% {
     transform: perspective(120px) rotate(0);
@@ -66,5 +65,50 @@ $cBlack: black;
 
   100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+
+// double-spin(round)
+  .double-spinner {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+
+    & > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgb(53, 53, 53);
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include animation02(
+        $name: double-spin,
+        $duration: 2s,
+        $iteration-count: infinite,
+        $fill-mode: forwards,
+        $timing-function: ease-in-out
+      );
+
+      &:nth-child(2) {
+        animation-delay: -1s;
+      }
+    }
+  }
+
+@keyframes double-spin {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }
