@@ -86,10 +86,14 @@ img {
 
 .inview .img-zoom {
   opacity: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-animation-name: kf-img-show;
           animation-name: kf-img-show;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-delay: 0s;
@@ -100,6 +104,11 @@ img {
           animation-direction: normal;
   -webkit-animation-fill-mode: none;
           animation-fill-mode: none;
+}
+
+.inview .img-zoom:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @-webkit-keyframes kf-img-show {
@@ -134,5 +143,36 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+.hover-darken::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  -webkit-animation-name: kf-img-show;
+          animation-name: kf-img-show;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+}
+
+.hover-darken:hover::before {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 /*# sourceMappingURL=slideAnimation.css.map */
