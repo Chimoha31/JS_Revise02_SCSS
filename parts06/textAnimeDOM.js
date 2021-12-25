@@ -20,6 +20,10 @@ class TextAnimation {
     }, "");
   }
   animate() {
-    this.el.classList.toggle('inview');
+    console.log(this);
+    setTimeout(function() {
+      console.log(this);
+      this.el.classList.toggle('inview');
+    }.bind(this));
   }
 }
