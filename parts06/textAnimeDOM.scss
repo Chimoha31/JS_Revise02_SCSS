@@ -16,11 +16,12 @@ body {
   background-color: teal;
 }
 
-.animate-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.animate-title,
+.animate-title-2 {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   color: #fff;
   opacity: 0;
   font-size: 2em;

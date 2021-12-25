@@ -1,21 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const el = document.querySelector(".animate-title");
-  // 余分な空白をtrim()で消す
-  const str = el.innerHTML.trim().split("");
-
-  // let concatStr = "";
-  // for文の場合
-  // for(let c of str) {
-  //   // PLAYの後の空白は、詰められるのでUIでは空白がないので、 &nbsp;で空白を作る。
-  //   c = c.replace(' ', '&nbsp;');
-  //   concatStr += `<span class="char">${c}</span>`;
-  // }
-
-
-  // reduceの場合は配列に直さないといけないので、trim()の後にsplit(””)を記載。
-  el.innerHTML = str.reduce((accu, curr) => {
-    curr = curr.replace(" ", "&nbsp;");
-    return `${accu}<span class="char">${curr}</span>`;
-  }, "");
+  const ta = new TextAnimation('.animate-title');
+  const ta2 = new TextAnimation('.animate-title-2');
+  setTimeout(() => {
+    ta.animate();
+    ta2.animate();
+  }, 1000);
 });
 
+class TextAnimation {
+  constructor(el) {
+    this.el = document.querySelector(el);
+    this.chars = this.el.innerHTML.trim().split("");
+    this.el.innerHTML = this._splitText();
+  }
+  _splitText() {
+    return this.chars.reduce((accu, curr) => {
+      curr = curr.replace(" ", "&nbsp;");
+      return `${accu}<span class="char">${curr}</span>`;
+    }, "");
+  }
+  animate() {
+    this.el.classList.toggle('inview');
+  }
+}
