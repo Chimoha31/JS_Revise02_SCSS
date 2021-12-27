@@ -24,3 +24,46 @@ class TextAnimation {
       this.el.classList.toggle('inview');
   }
 }
+
+
+
+// About class
+const obj = {
+  first_name: 'Chiho',
+  last_name: 'Maekawa',
+  printFullName: function() {
+    console.log('hello');
+  }
+}
+
+class MyObj {
+  constructor() {
+    this.first_name = "Teddy";
+    this.last_name= "Sanghera";
+  }
+  printFullName() {
+    console.log('hello2');
+  }
+}
+
+const obj2 = new MyObj();
+
+obj.printFullName();
+obj2.printFullName();
+
+
+// thisとbind
+const obj3 = {
+  first_name: 'Hana',
+  last_name: 'Maekawa',
+  printFullName: function() {
+    console.log(this);
+    const _that = this;
+
+    window.setTimeout(function() {
+      console.log(this);
+    }.bind(this));
+  }
+}
+
+obj3.printFullName();
