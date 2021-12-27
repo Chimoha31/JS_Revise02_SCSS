@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector('#btn');
   const ta = new TextAnimation('.animate-title');
   const ta2 = new TextAnimation('.animate-title-2');
-  setTimeout(() => {
-    ta.animate();
-    ta2.animate();
-  }, 1000);
+  btn.addEventListener('click', () => {
+      ta.animate();
+      ta2.animate();
+    });
 });
 
 class TextAnimation {
@@ -20,10 +21,6 @@ class TextAnimation {
     }, "");
   }
   animate() {
-    console.log(this);
-    setTimeout(function() {
-      console.log(this);
       this.el.classList.toggle('inview');
-    }.bind(this));
   }
 }
