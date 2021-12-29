@@ -12,6 +12,14 @@ section {
   background-color: teal;
 }
 
+section:nth-child(2) {
+  background-color: mediumvioletred;
+}
+
+section:nth-child(3) {
+  background-color: orange;
+}
+
 .animate-title,
 .tween-animate-title {
   position: absolute;
