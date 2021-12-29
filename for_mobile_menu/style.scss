@@ -1,7 +1,7 @@
 $cBlack: black;
 $cWhite: white;
 
-.mobile-menu-icon {
+.mobile-menu__btn {
     background-color: unset;
     border: none;
     outline: none !important;
@@ -24,7 +24,7 @@ $cWhite: white;
 .menu-open {
     background-color: $cBlack;
 
-    & .mobile-menu-icon {
+    & .mobile-menu__btn {
         & > span {
             background-color: $cWhite;
 
