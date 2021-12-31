@@ -1,13 +1,76 @@
+@import 'mixin';
+
+$cWhite: #fff;
+
 .swiper {
   width: 100%;
   height: 300px;
 }
 
-.swiper-wrapper {
-  width: 100%;
+.hero {
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $cWhite;
+    font-size: 25px;
+  }
+
+  &__footer {
+    // border: 1px solid red;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 2;
+    height: 68px;
+    width: 22px;
+    overflow: hidden;
+  }
+
+  &__downarrow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+
+    animation: kf-arrow-anime 1s infinite forwards linear;
+
+  // @include animation(
+  //   $name: kf-arrow-anime,
+  //   $iteration-count: infinite,
+  //   $duration: 2s,
+  //   $timimg-function: linear,
+  // )
+  }
+
+  &__scrolltext {
+    position: absolute;
+    transform: rotate(90deg);
+    color: rgba(255, 255, 255, 0.7);
+    left: -8px;
+    top: 11px;
+    font-size: 1.2em;
+  }
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
+@keyframes kf-arrow-anime {
+  0%,
+  50%,
+  100% {
+    transform: translateY(-10%);
+  }
+  30% {
+    transform: none;
+  }
 }
+
+// .swiper-wrapper {
+//   width: 100%;
+// }
+
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+// }
