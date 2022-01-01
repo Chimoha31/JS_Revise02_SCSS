@@ -3,11 +3,11 @@
 $cWhite: #fff;
 
 
-// .swiper {
-//   overflow: visible !important;
-//   // width: 100%;
-//   // height: 300px;
-// }
+.swiper {
+  overflow: visible !important;
+  // width: 100%;
+  // height: 300px;
+}
 
 .swiper-slide {
   height: 500px;
@@ -23,9 +23,10 @@ $cWhite: #fff;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 61, 125, 0.1);
@@ -74,7 +75,11 @@ $cWhite: #fff;
     bottom: 0;
     width: 6px;
 
-    animation: kf-arrow-anime 1s infinite forwards linear;
+    animation-name: kf-arrow-anime;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
   }
 
   &__scrolltext {
