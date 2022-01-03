@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="styles/loader.css">
     <script src="scripts/vendors/pace.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+    <!-- ↓bootstrap-reboot = reset cssと言われるコードをlinkタグの一番上に貼ることで、既存のスタイルをリセットできる。 -->
+    <!-- 注意点.....コードの最後や途中に貼るとスタイルが崩れるので、必ず一番最初に貼ること！ -->
     <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css" />
     <link rel="stylesheet" href="styles/vendors/swiper.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -263,6 +266,8 @@
         </ul>
       </nav>
     </div>
+
+    <!-- main.jsは必ず下に置く -->
     <script src="scripts/vendors/swiper.min.js"></script>
     <script src="scripts/vendors/TweenMax.min.js"></script>
     <script src="scripts/vendors/scroll-polyfill.js"></script>
